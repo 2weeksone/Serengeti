@@ -14,8 +14,8 @@ const MBTI = document.querySelector('#mbti');
 const explain = document.querySelector('#explain');
 const image = document.querySelector('#result-img');
 const resultContainer = document.querySelector('.result-container');
+const qNum = document.querySelector("#qNum");
 
-//qNum 
 const q = {
     1: { "title": "문제 1번",
         "body":"애인이 다른 이성친구랑 맞담을 하러 간다면? ",
@@ -65,6 +65,7 @@ const q = {
 
 }
 const result = {
+
     100:{"person":"당신은 지구 온난화 해결사", "explain":"100%의 쿨함을 가졌군요! 어라, 당신의 주위를 지나가는 모두가 얼어 붙습니다. 주변을 잘 살펴보세요!"},//13~15
     80:{"person":"당신은 인간 에어컨", "explain":"75%의 쿨함을 가졌군요! 무더위를 조심하세요. 사람들이 모두 당신에게 달라붙을지도 모릅니다."},//9~12
     50:{"person":"당신은 다 녹은 얼음물", "explain":"50%의 쿨함을 가졌군요! 이런, 얼음이 다 녹아서 물이 미적지근해졌어요. 이랬다 저랬다 하는 당신, 원한다면 얼음 리필 꼭 하세요!"},//6~8
@@ -72,7 +73,6 @@ const result = {
     0:{"person":"당신은 이 시대의 진정한 쿨찐", "explain":"0%의 쿨함을 가졌군요! 어.. 그럴 수 있죠! 당신, 주변인 모두가 인정하는 쿨찐일지도?"}//0~2
 }
 
-//let qNum; 현재 문제번호
 
 let num = 1;
 
@@ -100,6 +100,7 @@ function updateQuestion() {
                 person.innerHTML = result[100].person;
                 explain.innerHTML = result[100].explain;
                 // image.setAttribute('src', result[100].img);
+
             }
                 
             else if (12>score && score>9){
@@ -129,6 +130,7 @@ function updateQuestion() {
         body.innerHTML = q[num].body;
         aBtn.innerHTML = q[num].A;
         bBtn.innerHTML = q[num].B;
+        qNum.innerHTML = num+"/15";
         num++;
     }
 }
